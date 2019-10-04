@@ -1,43 +1,69 @@
-<script src="https://unpkg.com/vue"></script>
+<html>
+<head>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .c1{
+            background-color: red;
+        }
+        .c2{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+
+
 
 <div id="desafio">
     <!-- 1) Preencha a tag <p> abaixo com o seu Nome e Idade - usando Interpolação -->
     <p>Usando VueJS - {{ nome }} {{ idade }}</p>
-    
+
     <!-- 2) Exiba sua idade multiplicada por 3 -->
     <p>{{ calcularIdade() }}</p>
-    
+
     <!-- 3) Chame uma função para exibir um número randomico entre 0 and 1 (Math.random()) -->
     <!-- Usar v-once para mudar somente uma vez -->
     <p v-once> {{ randomico() }} </p>
-    
-    <!-- 4) Procure uma imagem no google e exiba na tag img 
-        fazendo o binding no atributo "src" -->
-    <div>
-        <img height="400" v-bind:src="imagem" />
-    </div>
-    
-    <!-- 5) Inicialize o input com o seu nome (use o atributo "value") -->
-    <div>
-        <!-- Usar : para v-bind -->
-        <input type="text" :value="nome" />
-    </div>
+
+    <!-- 4) Procure uma imagem no google e exiba na tag img
+            fazendo o binding no atributo "src" -->
+
+    <img height="400" v-bind:src="imagem" />
+
+<div>
 
 
-    <p>{{ contador }}</p>
-    <button v-on:click="somar(1)">Somar 1</button>
-    <button v-on:click="somar(5, $event)">Somar 5</button>
-    <p> {{ resultado }} </p>
 
-    <p v-on:mousemove="mouseXY"> Mouse x {{ x }} y {{ y }} <span v-on:mousemove.stop.prevent="">PARAR EVENTO</span> </p>
 
-    <p><a v-on:click.prevent="" target="_blank" href="http://www.google.com">Google</a></p>
 
-    <!-- Usar @ para v-on -->
-    <p><input type="text" @keyup.enter="enviar" v-on:keyup.control.s="alertar" /></p>
+<!-- 5) Inicialize o input com o seu nome (use o atributo "value") -->
+<div>
+    <!-- Usar : para v-bind -->
+    <input type="text" :value="nome" />
+</div>
 
-    <h3>{{ titulo }}</h3>
-    <p><input type="text" v-model="titulo" /></p>
+
+<p>{{ contador }}</p>
+<button v-on:click="somar(1)">Somar 1</button>
+<button v-on:click="somar(5, $event)">Somar 5</button>
+<p> {{ resultado }} </p>
+
+<p v-on:mousemove="mouseXY"> Mouse x {{ x }} y {{ y }} <span v-on:mousemove.stop.prevent="">PARAR EVENTO</span> </p>
+
+<p><a v-on:click.prevent="" target="_blank" href="http://www.google.com">Google</a></p>
+
+<!-- Usar @ para v-on -->
+<p><input type="text" @keyup.enter="enviar" v-on:keyup.control.s="alertar" /></p>
+
+<h3>{{ titulo }}</h3>
+<p><input type="text" v-model="titulo" /></p>
+
+<div id="c1apply" class="" :class="{ 'c1' : aplicarC1 }" @click="aplicarC1 = !aplicarC1" >CLIQUE</div>
+<div id="c2apply" class="" :class="{ 'c2' : aplicarC2 }" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
 
 </div>
 <script src="app.js"></script>
+
+</body>
+</html>

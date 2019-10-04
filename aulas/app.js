@@ -7,7 +7,9 @@ new Vue({
         contador: 0,
         x: 0,
         y: 0,
-        titulo : 'Bem vindo'
+        titulo : 'Bem vindo',
+        aplicarC1 : false,
+        aplicarC2 : false
     }, methods : {
         randomico: function(){
             return Math.random()
