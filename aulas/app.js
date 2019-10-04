@@ -9,7 +9,8 @@ new Vue({
         y: 0,
         titulo : 'Bem vindo',
         aplicarC1 : false,
-        aplicarC2 : false
+        aplicarC2 : false,
+        classes : 'c1'
     }, methods : {
         randomico: function(){
             return Math.random()
@@ -35,6 +36,12 @@ new Vue({
         // Usamos computado quando queremos que uma variável só chame o metodo quando for alterada
         resultado(){
             return  this.contador > 10 ? "Maior do que 10" : "Menor que 10";
+        },
+        estilo(){
+            return {
+                c1 : this.aplicarC1,
+                c2 : !this.aplicarC2
+            }
         }
     }, watch : {
         // Usamos watch quando queremos verificar um valor antigo e um novo de uma variável já declarada... legal aqui para poder usar em combobox para chamar um ajax quando mudar o combo

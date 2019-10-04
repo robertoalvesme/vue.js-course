@@ -8,11 +8,12 @@
         .c2{
             background-color: green;
         }
+        .text{
+            color: green;
+        }
     </style>
 </head>
 <body>
-
-
 
 
 <div id="desafio">
@@ -61,6 +62,9 @@
 
 <div id="c1apply" class="" :class="{ 'c1' : aplicarC1 }" @click="aplicarC1 = !aplicarC1" >CLIQUE</div>
 <div id="c2apply" class="" :class="{ 'c2' : aplicarC2 }" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
+
+    <div id="c3apply" class="" :class="estilo" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
+    <div id="c4apply" class="" :class="[ classes , { 'text' : aplicarC1 } ]">CLIQUE</div>
 
 </div>
 <script src="app.js"></script>
