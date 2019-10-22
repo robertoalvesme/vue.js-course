@@ -60,11 +60,17 @@
 <h3>{{ titulo }}</h3>
 <p><input type="text" v-model="titulo" /></p>
 
+<p><input type="text" v-model="cor" :style="{'background-color':cor}" /></p>
+<p><input type="text" v-model="borderColor" /></p>
+
+<div :style="[meuEstilo,{'border':'1px solid'}]">Minha div </div>
+
+
 <div id="c1apply" class="" :class="{ 'c1' : aplicarC1 }" @click="aplicarC1 = !aplicarC1" >CLIQUE</div>
 <div id="c2apply" class="" :class="{ 'c2' : aplicarC2 }" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
 
-    <div id="c3apply" class="" :class="estilo" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
-    <div id="c4apply" class="" :class="[ classes , { 'text' : aplicarC1 } ]">CLIQUE</div>
+<div id="c3apply" class="" :class="estilo" @click="aplicarC2 = !aplicarC2">CLIQUE</div>
+<div id="c4apply" class="" :class="[ classes , { 'text' : aplicarC1 } ]">CLIQUE</div>
 
 </div>
 <script src="app.js"></script>

@@ -10,7 +10,9 @@ new Vue({
         titulo : 'Bem vindo',
         aplicarC1 : false,
         aplicarC2 : false,
-        classes : 'c1'
+        classes : 'c1',
+        cor: 'red',
+        borderColor: '#000000'
     }, methods : {
         randomico: function(){
             return Math.random()
@@ -41,6 +43,12 @@ new Vue({
             return {
                 c1 : this.aplicarC1,
                 c2 : !this.aplicarC2
+            }
+        },
+        meuEstilo(){
+            return{
+                backgroundColor : this.cor,
+                color: this.borderColor
             }
         }
     }, watch : {

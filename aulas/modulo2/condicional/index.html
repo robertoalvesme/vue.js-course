@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+
+
+    <!-- Usar o template ele acopla os dados mas não renderiza - é um recurso do HTML 5 -->
+    <!-- VIF e ELSE tem que ser na tag seguinte uma da outra -->
+    <template v-if="logado">
+        <p>Usuário logado: {{ nome }}</p>
+        <p>Perfil: Admin </p>
+    </template>
+    <p v-else-if="anonimo">Está anonimo</p>
+    <p v-else>Nenhum usuário logado</p>
+    <button @click="logado = !logado">{{ logado ? 'Sair' : 'Entrar' }}</button>
+    <input type="checkbox" v-model="anonimo">Navegar anonimo
+
+
+
+    <!-- VShow apenas esconde o elemento da página mas ele continua lá -->
+    <footer v-show="logado">
+        Exibir footer somente para usuário logado
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
