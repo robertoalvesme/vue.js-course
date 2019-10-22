@@ -7,8 +7,26 @@
 <body>
 <div id="app">
 
+    <h2>Cores</h2>
     <ul>
-        <li v-for="cor in cores">{{ cor }}</li>
+        <li v-for="(cor, i) in cores" :key="cor">{{ i + ' - ' + cor }}</li>
+    </ul>
+    <button @click="cores.push('branca')">Adcicionar</button>
+
+    <hr/>
+    <h2>Pessoas</h2>
+    <ul>
+        <li v-for="(pessoa, i) in pessoas" :key="pessoa.name">
+            <template v-for="(key,val,idx) in pessoa">
+                {{ key }} : {{ val }}
+            </template>
+        </li>
+    </ul>
+
+    <hr/>
+    <h2>Numeros</h2>
+    <ul>
+        <li v-for="n in 10">{{n}}</li>
     </ul>
 
 </div>
